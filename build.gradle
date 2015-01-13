@@ -8,4 +8,4 @@ buildscript {
 }
 
 // this script was used to upload files to bintray.
-apply from: 'bintray.gradle'
+apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
