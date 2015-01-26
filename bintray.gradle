@@ -64,8 +64,8 @@ publishing {
 bintray {
     //Do not share your username and key.
     // Config it in ~/.gradle/gradle.properties or local.properties
-    user = bintrayUser
-    key = bintrayKey
+    user = BINTRAY_USER
+    key = BINTRAY_KEY
 
     publications = ['mavenJava'] //When uploading Maven-based publication files
     // - AND/OR -
