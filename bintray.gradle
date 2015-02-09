@@ -65,6 +65,7 @@ bintray {
     user = BINTRAY_USER
     key = BINTRAY_KEY
     publications = ['mavenJava'] //When uploading Maven-based publication files
+    publish = true
     pkg {
         repo = 'maven'
         name = PROJ_NAME
