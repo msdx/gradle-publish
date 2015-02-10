@@ -26,10 +26,6 @@ Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 
-*Note:* When you run/build the project with Android Studio, you need to comment the code `apply from:...`, or maybe there will be such a error:
-
-`Error:Could not find property 'bundleRelease' on org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication_Decorated@70c5813f.`
-
 ---
 
 ##介绍
@@ -57,8 +53,6 @@ Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 
-**注意：**  当你通过Android Studio运行或构建项目时，你可能需要把上面那一句`apply from: xxx`给注释掉，否则可能会出现下面的问题：
-
-`Error:Could not find property 'bundleRelease' on org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication_Decorated@70c5813f.`
+*注:* 当前版本不会再在通过 Android Studio 运行项目时引发错误。
 
 使用方法见博客：http://blog.csdn.net/maosidiaoxian/article/details/43148643
