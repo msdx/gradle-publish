@@ -1,10 +1,9 @@
 group = PROJ_GROUP
 version = PROJ_VERSION
+project.archivesBaseName = PROJ_ARTIFACTID
 
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
-
-android.libraryVariants
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -48,10 +47,9 @@ publishing {
         mavenJava(MavenPublication) {
             artifactId PROJ_ARTIFACTID
 
-            artifact sourcesJar
-            artifact javadocJar
-            artifact bundleRelease
-
+            pom{
+                packaging 'aar'
+            }
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', PROJ_DESCRIPTION)
@@ -64,8 +62,11 @@ publishing {
 bintray {
     user = BINTRAY_USER
     key = BINTRAY_KEY
-    publications = ['mavenJava'] //When uploading Maven-based publication files
+
+    configurations = ['archives']
+    publications = ['mavenJava']
     publish = true
+
     pkg {
         repo = 'maven'
         name = PROJ_NAME
@@ -73,11 +74,7 @@ bintray {
         websiteUrl = PROJ_WEBSITEURL
         issueTrackerUrl = PROJ_ISSUETRACKERURL
         vcsUrl = PROJ_VCSURL
-        licenses = ['Apache-2.0']
+        licenses = ['aApache-2.0']
         publicDownloadNumbers = true
-        version {
-            name = PROJ_VERSION //Bintray logical version name
-            vcsTag = PROJ_VERSION
-        }
     }
 }
