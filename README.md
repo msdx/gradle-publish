@@ -1,17 +1,17 @@
 #gradle-publish
 
 ##Introduction
-This project includes some gradle srcipt to publish gradle project to JCenter.
+This project includes some gradle srcipts that publish gradle project to JCenter.
 
 `bintray.gradle`: The script to publish an android gradle project to JCenter.
 
 `build.gradle`: A demo about how to use it.
 
-`gradle.properties`:The properties that used in `bintray.gradle`. You need to copy it into your library project and configure the values of the properties.
+`gradle.properties`:The properties that used in `bintray.gradle`. You need to copy it into your library project and configure the values of these properties.
 
 ##How To Use
 
-Add the dependencies section to your library `build.gradle` if it doesn't already exist:
+Add the dependencies section into `build.gradle` in your library if it doesn't already exist:
 
     buildscript {
         repositories {
@@ -22,11 +22,11 @@ Add the dependencies section to your library `build.gradle` if it doesn't alread
         }
     }
 
-Then add it into the bottom of the `build.gradle`:
+Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 
-*Note:* When you run/build the project with Android Studio, you need to comment the code `apply from:....`, or there may be such a error:
+*Note:* When you run/build the project with Android Studio, you need to comment the code `apply from:...`, or maybe there will be such a error:
 
 `Error:Could not find property 'bundleRelease' on org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication_Decorated@70c5813f.`
 
