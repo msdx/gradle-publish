@@ -74,7 +74,7 @@ bintray {
         websiteUrl = PROJ_WEBSITEURL
         issueTrackerUrl = PROJ_ISSUETRACKERURL
         vcsUrl = PROJ_VCSURL
-        licenses = ['aApache-2.0']
+        licenses = ['Apache-2.0']
         publicDownloadNumbers = true
     }
 }
