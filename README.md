@@ -1,13 +1,13 @@
 #gradle-publish
 
 ##Introduction
-This project includes some gradle srcipts that publish gradle project to JCenter.
+This project includes some gradle scripts that can publish gradle project to JCenter.
 
-`bintray.gradle`: The script to publish an android gradle project to JCenter.
+`bintray.gradle`: A script to publish an android gradle project to JCenter.
 
 `build.gradle`: A demo about how to use it.
 
-`gradle.properties`:The properties that used in `bintray.gradle`. You need to copy it into your library project and configure the values of these properties.
+`gradle.properties`:The properties that will be used in `bintray.gradle`. You are required to copy this file into your library project and configure the values of these properties.
 
 ##How To Use
 
