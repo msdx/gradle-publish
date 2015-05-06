@@ -7,7 +7,7 @@ This project includes some gradle scripts that can publish gradle project to JCe
 
 `build.gradle`: A demo about how to use it.
 
-`gradle.properties`:The properties that will be used in `bintray.gradle`. You are required to copy this file into your library project and configure the values of these properties.
+`gradle.properties`: The properties that will be used in `bintray.gradle`. You are needed to copy this file into your library project and configure the values of these properties.
 
 ##How To Use
 
