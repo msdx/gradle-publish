@@ -27,6 +27,7 @@ javadoc {
         author true
         version true
         links "http://docs.oracle.com/javase/7/docs/api"
+        title PROJ_ARTIFACTID
     }
 }
 
