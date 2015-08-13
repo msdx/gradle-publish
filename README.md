@@ -26,6 +26,10 @@ Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 
+Execute `gradle bintrayUpload` to publish artifacts to bintray.com.
+
+Execute `gradle artifactoryPublish` to publish SNAPSHOT version to oss.jfrog.org.
+
 ---
 
 ##介绍
