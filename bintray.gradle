@@ -6,6 +6,8 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
+def publishType = hasProperty("publish") ? getProperty("publish") : "mavenAar"
+
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
@@ -54,7 +56,7 @@ def pomConfig = {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        mavenAar(MavenPublication) {
             artifactId PROJ_ARTIFACTID
             artifact javadocJar
             artifact sourcesJar
@@ -68,18 +70,33 @@ publishing {
                 root.children().last() + pomConfig
             }
         }
+        mavenJar(MavenPublication) {
+            artifactId PROJ_ARTIFACTID
+            artifact javadocJar
+            artifact sourcesJar
+
+            pom{
+                packaging 'jar'
+            }
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', PROJ_DESCRIPTION)
+                root.children().last() + pomConfig
+            }
+        }
     }
 }
 
 afterEvaluate {
-    publishing.publications.mavenJava.artifact(bundleRelease)
+    publishing.publications.mavenAar.artifact(bundleRelease)
+    publishing.publications.mavenJar.artifact(packageReleaseJar)
 }
 
 bintray {
     user = hasProperty("bintrayUser")?getProperty("bintrayUser"):getProperty("BINTRAY_USER")
     key = hasProperty("bintrayKey")?getProperty("bintrayKey"):getProperty("BINTRAY_KEY")
 
-    publications = ['mavenJava']
+    publications = [publishType]
     publish = true
 
     pkg {
@@ -110,7 +127,7 @@ artifactory {
         }
         defaults {
             //这里的名字和上面红色的名字一致即可，会将其包含的输出上传到jfrog上去
-            publications('mavenJava')
+            publications(publishType)
             publishArtifacts = true
         }
     }
