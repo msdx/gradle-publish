@@ -158,7 +158,7 @@ gradle artifactoryPublish
 
 使用方法见博客：http://blog.csdn.net/maosidiaoxian/article/details/43148643
 
-如有不明，亦可参见：http://dxjia.cn/2015/09/%E4%BD%BF%E7%94%A8gradle%E5%8F%91%E5%B8%83android%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%B0jcenter
+如有不明，亦可参见：http://zdz.la/rpZnyX
 
 ##特别鸣谢
 
