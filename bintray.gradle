@@ -98,13 +98,6 @@ bintray {
             gpg {
                 sign = true
             }
-
-            mavenCentralSync {
-                sync = project.hasProperty('SONATYPE_USER') && project.hasProperty('SONATYPE_KEY')
-                user = project.hasProperty('SONATYPE_USER') ? project.property('SONATYPE_USER') : ""
-                password = project.hasProperty('SONATYPE_PASS') ? project.property('SONATYPE_PASS') : ""
-                close = '1'
-            }
         }
     }
 }
