@@ -25,8 +25,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
     }
 }
 
@@ -35,6 +35,8 @@ buildscript {
 Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
+
+**Note:** Maximum supported Gradle version is 2.13. For the newer version of Gradle, you need to upgrade the versin of the bintray plugin.
 
 ###3. setup `gradle.properties` in your library module
 Copy the `gradle.properties`(which is in this project, not the one we modified in step 1) file to your library module, Click [Here](https://github.com/msdx/gradle-publish/blob/master/gradle.properties) to copy it.
@@ -108,8 +110,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
     }
 }
 ```
@@ -151,14 +153,7 @@ gradle bintrayUpload
 gradle artifactoryPublish
 ```
 ###5. 将库加入Jcenter
-最后一步，需要登录bintray.com，将我们刚刚发布的库申请加入到jcenter，这样别人才能直接引用到，具体如何操作可以参考下面链接的博文。
-
-
-*注:* 当前版本不会再在通过 Android Studio 运行项目时引发错误。
-
-使用方法见博客：http://blog.csdn.net/maosidiaoxian/article/details/43148643
-
-如有不明，亦可参见：http://zdz.la/rpZnyX
+最后一步，需要登录bintray.com，将我们刚刚发布的库申请加入到jcenter，这样别人才能直接引用到。
 
 ##特别鸣谢
 
