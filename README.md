@@ -25,7 +25,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
     }
 }
@@ -36,7 +36,7 @@ Then add it into the bottom of the `build.gradle` file:
 
     apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 
-**Note:** Maximum supported Gradle version is 2.13. For the newer version of Gradle, you need to upgrade the versin of the bintray plugin.
+**Note:** The Gradle version I use is 2.14.1. For the other version, you may need to upgrade or downgrade the `android-maven-gradle-plugin` or `gradle-bintray-plugin` version.
 
 ###3. setup `gradle.properties` in your library module
 Copy the `gradle.properties`(which is in this project, not the one we modified in step 1) file to your library module, Click [Here](https://github.com/msdx/gradle-publish/blob/master/gradle.properties) to copy it.
@@ -110,7 +110,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
     }
 }
