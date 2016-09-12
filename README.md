@@ -32,11 +32,11 @@ buildscript {
 
 ```
 
-Then add it into the bottom of the `build.gradle` file:
-
-    apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
-
 **Note:** The Gradle version I use is 2.14.1. For the other version, you may need to upgrade or downgrade the `android-maven-gradle-plugin` or `gradle-bintray-plugin` version.
+
+Then you need download the `bintray.gradle` into your library project, and add the following to the **bottom** of your `build.gradle` file:
+
+    apply from: './bintray.gradle'
 
 ###3. setup `gradle.properties` in your library module
 Copy the `gradle.properties`(which is in this project, not the one we modified in step 1) file to your library module, Click [Here](https://github.com/msdx/gradle-publish/blob/master/gradle.properties) to copy it.
@@ -80,6 +80,7 @@ Send a request to bintray.com about adding the library to Jcenter, after the req
 Special thanks to:
 
 * [@dxjia](https://github.com/dxjia) for improving this README.
+* [@stephentuso](https://github.com/stephentuso) for improving bintray.gradle
 
 ---
 
@@ -103,7 +104,7 @@ BINTRAY_KEY=bintray API Key
 并且你的OS是Windows， 并且是XP，那么一般是在` C:\Documents and Settings\用户名\.gradle`，而如果是win7以上，那么是在`c:\Users\用户名\.gradle`。
 
 ###2. 修改library目录下的`build.gradle`文件
-首先在你的library项目中的`build.gradle`添加以下的构建脚本依赖：
+首先在你的library项目中创建bintray.gradle文件，把本项目中的`bintray.gradle`文件内容拷贝进入，然后在你的library项目的`build.gradle`添加以下的构建脚本依赖：
 ```
 buildscript {
     repositories {
@@ -115,9 +116,10 @@ buildscript {
     }
 }
 ```
-然后在这个 `build.gradle`的底部添加以下代码：
 
-    apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
+接着在这个`build.gradle`的**底部**添加以下代码：
+
+    apply from: './bintray.gradle'
 
 ###3. 配置library目录下的`gradle.properties`
 复制本项目下的 `gradle.properties`文件(注意不是第二步中修改的那个文件)到你的library目录下, 点 [Here](https://github.com/msdx/gradle-publish/blob/master/gradle.properties) 直接复制。
@@ -158,3 +160,4 @@ gradle artifactoryPublish
 ##特别鸣谢
 
 * [@dxjia](https://github.com/dxjia) 完善README文档
+* [@stephentuso](https://github.com/stephentuso) 完善bintray.gradle
