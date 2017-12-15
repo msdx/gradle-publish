@@ -21,14 +21,20 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+task syncJavadoc(type: Sync, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    into rootProject.file('docs')
+}
+
 javadoc {
     options{
         encoding "UTF-8"
         charSet 'UTF-8'
         author true
         version true
-        links "https://androiddoc.qiniudn.com/reference/"
         title "$PROJ_NAME $PROJ_VERSION"
+        String packageListRef = "${android.sdkDirectory}/docs/reference/"
+        linksOffline 'http://d.android.com/reference/', packageListRef
     }
 }
 
